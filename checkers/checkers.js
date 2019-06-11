@@ -27,18 +27,16 @@ const checkCanFunction = {
     verbToBeChecked = verb;
     //if verb doesn't exist turn checkingState into false
     if (!roles[roleIndex].can[verb]) checkingState = false;
-    //go to (to) function or (for) depending on the verb
-    return verb === 'post' || verb === 'put'
-      ? checkToFunction
-      : checkFromFunction;
+    //go to (to) function or (for) function
+    return checkFromOrToFunction;
   },
 };
 
-const checkFromFunction = {
+const checkFromOrToFunction = {
   from: (path) => {
     //if the checking state is false return false as the verb wasn't found in the previous stage
     if (!checkingState) return checkingState;
-    //set the path to be checked with the given path 
+    //set the path to be checked with the given path
     checkedPath = path;
     //destructuring
     let { paths, conditions } = roles[roleIndex].can[verbToBeChecked];
@@ -55,18 +53,16 @@ const checkFromFunction = {
         ? checkingState
         : checkWhenFunction;
     }
-    //inverse checking state from true to false then return it as path is not found
+    //inverse checking state from true to false then return it because path is not found
     else return !checkingState;
   },
+  get to(){return this.from}
 };
 
-const checkToFunction = {
-  to: checkFromFunction.from,
-};
 
 const checkWhenFunction = {
   when: (...args) => {
-    //checking state equals false return false
+    //checking if state equals false return false
     if (!checkingState) return false;
     //destructuring
     let { paths, conditions } = roles[roleIndex].can[verbToBeChecked];
@@ -74,7 +70,7 @@ const checkWhenFunction = {
     const callBackFunction = conditions[conditionIndex];
     //construct the params object from the stored path
     const params = makeParamsObject(checkedPath, paths[conditionIndex]);
-    //path params to the callback function if it has a value, along with user arguments
+    //pass params to the callback function, if it has a value, along with other user arguments
     if (callBackFunction !== null) return callBackFunction(params, ...args);
     return true;
   },
