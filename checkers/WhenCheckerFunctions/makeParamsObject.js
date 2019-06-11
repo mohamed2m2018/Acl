@@ -5,12 +5,12 @@ const makeParamsObject = (checkedPath, storedPath) => {
   let valuesFound = [];
   for (let i = 0; i < checkedPathArray.length; i++) {
     if (storedPathArray[i].includes(':')) {
-      //store values of the checked path that corresponds to :params in the stored path
+      //store values of the checked path that correspond to :params in the stored path
       valuesFound.push(checkedPathArray[i]);
     }
   }
 
-  //params array stores the words that follows : symbol with the regular expression below
+  //params array stores the words that follow : symbol with the regular expression below
   paramsArray = storedPath.match(/(?<=:)(\w*)/g);
   paramsObject = {};
   for (let i = 0; i < paramsArray.length; i++) {
