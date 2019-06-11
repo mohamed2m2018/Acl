@@ -1,0 +1,31 @@
+{
+    "Roles": [],
+    "users": [
+        {
+            "id": "7",
+            "name": "Nourhan",
+            "mail": "n@n.com"
+        },
+        {
+            "id": "6",
+            "name": "Ahmed",
+            "mail": "a@a.com"
+        },
+        {
+            "id": "2",
+            "name": "Mariam",
+            "mail": "m@m.com"
+        },
+        {
+            "id": "3",
+            "name": "Selim",
+            "mail": "s@s.com"
+        },
+        {
+            "id": "12",
+            "name": "Kamal",
+            "mail": "a@a.com"
+        }
+    ],
+    "articles":[]
+}

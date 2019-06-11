@@ -1,0 +1,21 @@
+{
+  "name": "task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel": "babel --presets es2015 main.js -o main.bundle.js",
+    "start": "http-server -p 9000"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "http-server": "^0.11.1"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "json-server": "^0.15.0"
+  }
+}
