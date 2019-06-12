@@ -1,6 +1,6 @@
 {
   "name": "access-control-list-module",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "an ACL (Access Control List) specifies which users are granted access to objects,",
   "main": "acl.js",
   "scripts": {
