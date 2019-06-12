@@ -1,6 +1,11 @@
+//Testing example
+
 //import module
+
 import acl,{a,an,check} from 'access-control-list-module'
+
 // create different roles
+
 acl.createRole('admin');
 acl.createRole('user');
 acl.createRole('guest');
