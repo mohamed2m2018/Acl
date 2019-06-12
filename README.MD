@@ -51,7 +51,8 @@ console.log(
     .to('/users')
 ); // true
 
-// check if a user can post to articles
+// check if a user can post to /users/10/articles
+
 console.log(
   check
     .if('user')
