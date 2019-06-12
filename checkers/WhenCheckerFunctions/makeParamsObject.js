@@ -11,8 +11,8 @@ const makeParamsObject = (checkedPath, storedPath) => {
   }
 
   //params array stores the words that follow : symbol with the regular expression below
-  paramsArray = storedPath.match(/(?<=:)(\w*)/g);
-  paramsObject = {};
+  let paramsArray = storedPath.match(/(?<=:)(\w*)/g);
+  let paramsObject = {};
   for (let i = 0; i < paramsArray.length; i++) {
     //if the param is a number convert it to a number not a string
     paramsObject[paramsArray[i]] = Number(valuesFound[i])
@@ -23,4 +23,4 @@ const makeParamsObject = (checkedPath, storedPath) => {
   return paramsObject;
 };
 
-module.exports = makeParamsObject;
+export default makeParamsObject;

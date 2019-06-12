@@ -14,4 +14,4 @@ const arePathsEqual = (pathToBeChecked, storedPath) => {
   return true;
 };
 
-module.exports = arePathsEqual;
+export default arePathsEqual;

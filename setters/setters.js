@@ -1,4 +1,4 @@
-let roles = require('../savedRoles/savedRoles');
+import roles from '../savedRoles/savedRoles.js'
 let a, an;
 //setters parameters
 let roleIndex;
@@ -53,7 +53,4 @@ const callWhenFunction = {
     return true;
   },
 };
-module.exports = {
-  a: a,
-  an: an,
-};
+export { a, an };

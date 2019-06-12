@@ -1,4 +1,4 @@
-let roles = require('../savedRoles/savedRoles');
+import roles from '../savedRoles/savedRoles.js'
 //roles to be saved as the following
 
 /*example of a role object
@@ -27,4 +27,4 @@ const createRole = (roleName) => {
   });
 };
 
-module.exports = createRole;
+export default createRole;

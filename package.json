@@ -1,0 +1,22 @@
+{
+  "name": "access-control-list-module",
+  "version": "1.0.0",
+  "description": "an ACL (Access Control List) specifies which users are granted access to objects,",
+  "main": "acl.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohamed2m2018/cognitev-task.git"
+  },
+  "keywords": [
+    "acl"
+  ],
+  "author": "Mohamed Salah Eldin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohamed2m2018/cognitev-task/issues"
+  },
+  "homepage": "https://github.com/mohamed2m2018/cognitev-task#readme"
+}

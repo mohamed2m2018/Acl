@@ -1,6 +1,6 @@
-let roles = require('../savedRoles/savedRoles');
-const arePathsEqual = require('./WhenCheckerFunctions/arePathsEqual');
-const makeParamsObject = require('./WhenCheckerFunctions/makeParamsObject');
+import roles from '../savedRoles/savedRoles.js';
+import arePathsEqual from './WhenCheckerFunctions/arePathsEqual.js';
+import makeParamsObject from './WhenCheckerFunctions/makeParamsObject.js';
 
 //checking parameter
 let roleIndex;
@@ -56,9 +56,10 @@ const checkFromOrToFunction = {
     //inverse checking state from true to false then return it because path is not found
     else return !checkingState;
   },
-  get to(){return this.from}
+  get to() {
+    return this.from;
+  },
 };
-
 
 const checkWhenFunction = {
   when: (...args) => {
@@ -76,4 +77,4 @@ const checkWhenFunction = {
   },
 };
 
-module.exports = check;
+export default check;
