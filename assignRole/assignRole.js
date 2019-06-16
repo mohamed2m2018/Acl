@@ -1,6 +1,6 @@
 const users = require('../savedUsers/savedUsers');
-const roles= require('../savedRoles/savedRoles'); 
-
+let {loadRoles}=require('../RoleCreationAndLoadingHandlers/RoleCreationAndLoadingHandlers');
+let roles=loadRoles();
 const assignRole = (userId, roleName) => {
   roleIndex = roles.findIndex((role) => role.name === roleName);
   if (roleIndex === -1)

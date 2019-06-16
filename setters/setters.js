@@ -1,10 +1,15 @@
-const roles=require('../savedRoles/savedRoles');
+let {
+  loadRoles,
+  saveRoles,
+} = require('../RoleCreationAndLoadingHandlers/RoleCreationAndLoadingHandlers');
+let roles;
 let a, an;
 //setters parameters
 let roleIndex;
 let verbToBeSet;
 //setters
 a = an = (roleName) => {
+  roles = loadRoles();
   //store the index of the role of the saved array
   roleIndex = roles.findIndex((role) => role.name === roleName);
   if (roleIndex === -1) {
@@ -22,7 +27,7 @@ const callCanFunction = {
      with value of object with empty paths and empty conditions*/
     if (!roles[roleIndex].can[verb])
       roles[roleIndex].can[verb] = { paths: [], conditions: [] };
-
+    saveRoles(roles);
     return callFromOrToFunction;
   },
 };
@@ -38,6 +43,7 @@ const callFromOrToFunction = {
       //if doesn't contain params add a null condition
       if (!path.includes(':')) conditions.push(null);
     }
+    saveRoles(roles);
     return callWhenFunction;
   },
   get to() {
@@ -49,7 +55,8 @@ const callWhenFunction = {
   when: (callBackFunction) => {
     let { conditions } = roles[roleIndex].can[verbToBeSet];
     //store the function given by the user to call it when checking
-    conditions.push(callBackFunction);
+    conditions.push(callBackFunction.toString());
+    saveRoles(roles);
     return true;
   },
 };

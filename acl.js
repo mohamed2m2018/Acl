@@ -1,4 +1,4 @@
-const createRole = require('./createRole/createRole');
+const {createRole} = require('./RoleCreationAndLoadingHandlers/RoleCreationAndLoadingHandlers');
 const { a, an } = require('./setters/setters');
 const check = require('./checkers/checkers');
 

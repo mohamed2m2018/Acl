@@ -1,4 +1,5 @@
-const roles=require('../savedRoles/savedRoles');
+let {loadRoles}=require('../RoleCreationAndLoadingHandlers/RoleCreationAndLoadingHandlers');
+let roles;
 const users=require('../savedUsers/savedUsers');
 const arePathsEqual =require('./WhenCheckerFunctions/arePathsEqual.js');
 const makeParamsObject=require('./WhenCheckerFunctions/makeParamsObject.js');
@@ -12,6 +13,7 @@ let checkingState;
 
 const check = {
   ifRole: (roleName) => {
+    roles=loadRoles();
     checkingState = true;
     //check if this role has been created or not
     roleIndex = roles.findIndex((role) => role.name === roleName);
@@ -85,7 +87,7 @@ const checkWhenFunction = {
     //construct the params object from the stored path
     const params = makeParamsObject(checkedPath, paths[conditionIndex]);
     //pass params to the callback function, if it has a value, along with other user arguments
-    if (callBackFunction !== null) return callBackFunction(params, ...args);
+    if (callBackFunction !== null) return eval(callBackFunction)(params, ...args);
     return true;
   },
 };
