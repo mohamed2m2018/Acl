@@ -1,14 +1,16 @@
 //Testing example
+//Note: the roles will be saved automatically in the server file system to be persistent 
 
-//import module
+//require module
 
-import acl,{a,an,check} from 'access-control-list-module'
+const acl=require('access-control-list-module');
+const {createRole,a,an,check}=acl;
 
 // create different roles
 
-acl.createRole('admin');
-acl.createRole('user');
-acl.createRole('guest');
+createRole('admin');
+createRole('user');
+createRole('guest');
 
 // admin can list all users
 

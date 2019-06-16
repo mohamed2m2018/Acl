@@ -12,7 +12,7 @@ let conditionIndex;
 let checkingState;
 
 const check = {
-  ifRole: (roleName) => {
+  if: (roleName) => {
     roles=loadRoles();
     checkingState = true;
     //check if this role has been created or not
@@ -23,18 +23,18 @@ const check = {
       );
     else return checkCanFunction;
   },
-  ifUser: (userId) => {
-    checkingState = true;
-    //check if this id has been assigned a role or not
-    if (users[userId]) roleName = users[userId];
-    else
-      throw new Error(
-        `You haven't assigned roles to user with id ${userId} yet, please assign id to it first before checking it. `
-      );
-    roleIndex = roles.findIndex((role) => role.name === roleName);
+  // ifUser: (userId) => {
+  //   checkingState = true;
+  //   //check if this id has been assigned a role or not
+  //   if (users[userId]) roleName = users[userId];
+  //   else
+  //     throw new Error(
+  //       `You haven't assigned roles to user with id ${userId} yet, please assign id to it first before checking it. `
+  //     );
+  //   roleIndex = roles.findIndex((role) => role.name === roleName);
 
-    return checkCanFunction;
-  },
+  //   return checkCanFunction;
+  // },
 };
 
 const checkCanFunction = {
