@@ -1,7 +1,5 @@
-import createRole from './createRole/createRole.js';
-import { a, an } from './setters/setters.js';
-import check from './checkers/checkers.js';
+const createRole = require('./createRole/createRole');
+const { a, an } = require('./setters/setters');
+const check = require('./checkers/checkers');
 
-export{a,an,check};
-
-export default {createRole};
+module.exports = { createRole, a, an, check };

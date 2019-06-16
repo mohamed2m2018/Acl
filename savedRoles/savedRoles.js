@@ -1,2 +1,2 @@
 let roles = [];
-export default roles;
+module.exports=roles;

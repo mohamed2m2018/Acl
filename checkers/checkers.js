@@ -1,6 +1,7 @@
-import roles from '../savedRoles/savedRoles.js';
-import arePathsEqual from './WhenCheckerFunctions/arePathsEqual.js';
-import makeParamsObject from './WhenCheckerFunctions/makeParamsObject.js';
+const roles=require('../savedRoles/savedRoles');
+const users=require('../savedUsers/savedUsers');
+const arePathsEqual =require('./WhenCheckerFunctions/arePathsEqual.js');
+const makeParamsObject=require('./WhenCheckerFunctions/makeParamsObject.js');
 
 //checking parameter
 let roleIndex;
@@ -10,7 +11,7 @@ let conditionIndex;
 let checkingState;
 
 const check = {
-  if: (roleName) => {
+  ifRole: (roleName) => {
     checkingState = true;
     //check if this role has been created or not
     roleIndex = roles.findIndex((role) => role.name === roleName);
@@ -19,6 +20,18 @@ const check = {
         `You haven't created the ${roleName} role yet, please create it first before setting permissions to it. `
       );
     else return checkCanFunction;
+  },
+  ifUser: (userId) => {
+    checkingState = true;
+    //check if this id has been assigned a role or not
+    if (users[userId]) roleName = users[userId];
+    else
+      throw new Error(
+        `You haven't assigned roles to user with id ${userId} yet, please assign id to it first before checking it. `
+      );
+    roleIndex = roles.findIndex((role) => role.name === roleName);
+
+    return checkCanFunction;
   },
 };
 
@@ -77,4 +90,4 @@ const checkWhenFunction = {
   },
 };
 
-export default check;
+module.exports=check;

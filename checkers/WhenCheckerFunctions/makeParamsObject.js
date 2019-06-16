@@ -23,4 +23,4 @@ const makeParamsObject = (checkedPath, storedPath) => {
   return paramsObject;
 };
 
-export default makeParamsObject;
+module.exports = makeParamsObject;

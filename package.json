@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/mohamed2m2018/cognitev-task/issues"
   },
-  "homepage": "https://github.com/mohamed2m2018/cognitev-task#readme"
+  "homepage": "https://github.com/mohamed2m2018/cognitev-task#readme",
+  "dependencies": {
+    "data-store": "^3.1.0"
+  }
 }

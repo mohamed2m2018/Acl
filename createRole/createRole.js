@@ -1,4 +1,4 @@
-import roles from '../savedRoles/savedRoles.js'
+const roles = require('../savedRoles/savedRoles.js');
 //roles to be saved as the following
 
 /*example of a role object
@@ -17,8 +17,6 @@ import roles from '../savedRoles/savedRoles.js'
   }
 }*/
 
-
-
 //push the role name,and an empty object to state what it can do.. to the array
 const createRole = (roleName) => {
   roles.push({
@@ -27,4 +25,4 @@ const createRole = (roleName) => {
   });
 };
 
-export default createRole;
+module.exports = createRole;
