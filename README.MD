@@ -5,8 +5,8 @@
 
 //require module
 
-const acl=require('access-control-list-module');
-const {createRole,a,an,check}=acl;
+
+const {createRole,a,an,check}=require('access-control-list-module');
 
 // create different roles
 
