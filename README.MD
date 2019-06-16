@@ -1,5 +1,7 @@
+//Note: the roles will be saved automatically in the server file system in order to be persistent 
+
 //Testing example
-//Note: the roles will be saved automatically in the server file system to be persistent 
+
 
 //require module
 
