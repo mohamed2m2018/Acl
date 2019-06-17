@@ -27,7 +27,6 @@ const callCanFunction = {
      with value of object with empty paths and empty conditions*/
     if (!roles[roleIndex].can[verb])
       roles[roleIndex].can[verb] = { paths: [], conditions: [] };
-    saveRoles(roles);
     return callFromOrToFunction;
   },
 };

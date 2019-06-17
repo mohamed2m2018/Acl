@@ -37,7 +37,7 @@ const createRole=(roleName)=> {
       can: {},
     });
     //then write it to a file
-    fs.writeFileSync('file.json', JSON.stringify(roles));
+    fs.writeFileSync('roles.json', JSON.stringify(roles));
 
     return true;
   }
