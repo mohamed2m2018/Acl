@@ -62,7 +62,7 @@ check.if('user').can('post').to('/users/10/articles').when({ id: 10 });
 
 ```
 
-#To clear ALL Roles:
+###To clear ALL Roles:
 
 ```
 clearRoles();
