@@ -3,6 +3,10 @@
 ACL (Access Control List) specifies which group of users are granted access to objects,
 as well as what operations are allowed on given objects.
 
+##Note
+
+The module is currently under continuous development, and lots of new features will be added continuously 
+
 ### Installing
 
 Just download the package from your terminal
@@ -65,7 +69,7 @@ check.if('user').can('post').to('/users/10/articles').when({ id: 10 });
 ###To clear ALL Roles:
 
 ```
-clearRoles();
+clearAllRoles();
 
 ```
 
@@ -77,7 +81,7 @@ Just try this example
 //require module
 
 
-const {createRole,a,an,check,clearRoles}=require('access-control-list-module');
+const {createRole,a,an,check,clearAllRoles}=require('access-control-list-module');
 
 // create different roles
 
@@ -147,5 +151,5 @@ console.log(
     .to('/users/articles')
 ); // false
 
-clearRoles(); //to clear the fake saved test rules from the server   
+clearAllRoles(); //to clear the fake saved test rules from the server   
 

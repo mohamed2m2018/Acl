@@ -61,7 +61,7 @@ const saveRoles =(roles)=>{
 }
 
 
-const clearRoles=()=>{
+const clearAllRoles=()=>{
   try{
     fs.unlinkSync('roles.json')
   }
@@ -73,5 +73,4 @@ const clearRoles=()=>{
 }
 
 
-
-module.exports = {createRole,loadRoles,saveRoles,clearRoles};
+module.exports = {createRole,loadRoles,saveRoles,clearAllRoles};

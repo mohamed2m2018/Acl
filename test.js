@@ -6,7 +6,7 @@
 //require module
 
 
-const {createRole,a,an,check,clearRoles}=require('./acl');
+const {createRole,a,an,check,clearAllRoles}=require('./acl');
 
 // create different roles
 
@@ -75,4 +75,4 @@ console.log(
 ); // false
 
 
-clearRoles();
+clearAllRoles();
