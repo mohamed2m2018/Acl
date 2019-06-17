@@ -19,6 +19,11 @@ createRole('admin');
 
 ```
 
+```
+createRole('guest');
+
+```
+
 ###To Set Permissions:
 Permissions should be defined using functions a and an, like so:
 
@@ -28,7 +33,7 @@ an('admin').can('post').to('/users');
 ```
 
 ```
-an('admin').can('get').from('/users');
+a('guest').can('get').from('/users');
 
 ```
 
