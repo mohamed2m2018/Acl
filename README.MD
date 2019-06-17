@@ -70,7 +70,9 @@ const {createRole,a,an,check}=require('access-control-list-module');
 // create different roles
 
 createRole('admin');
+
 createRole('user');
+
 createRole('guest');
 
 // admin can list all users
