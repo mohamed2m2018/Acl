@@ -7,6 +7,11 @@ as well as what operations are allowed on given objects.
 
 The module is currently under continuous development, and lots of new features will be added continuously 
 
+
+###Where the roles are being saved?
+
+Roles are saved on a file in the server file system in order to be persistent.
+
 ### Installing
 
 Just download the package from your terminal
