@@ -10,7 +10,7 @@ The module is currently under continuous development, and lots of new features w
 
 ###Where the roles are being saved?
 
-Roles are saved on a file in the server file system in order to be persistent.
+Roles are saved on a file in the server file system, in order to make the roles and its permissions persistent.
 
 ### Installing
 
@@ -64,7 +64,7 @@ check.if('admin').can('post').to('/users'); //true
 ```
 
 When checking using the when function you don't need to send the params, you only need to send the other
-arguments that you have passed to when function while setting the permissions for that path   
+arguments that you have set to when function while setting the permissions for that path   
 
 ```
 check.if('user').can('post').to('/users/10/articles').when({ id: 10 });
