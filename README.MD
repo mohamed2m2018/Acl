@@ -62,6 +62,13 @@ check.if('user').can('post').to('/users/10/articles').when({ id: 10 });
 
 ```
 
+#To clear ALL Roles:
+
+```
+clearRoles();
+
+```
+
 ## Getting Started
 
 Just try this example
@@ -70,7 +77,7 @@ Just try this example
 //require module
 
 
-const {createRole,a,an,check}=require('access-control-list-module');
+const {createRole,a,an,check,clearRoles}=require('access-control-list-module');
 
 // create different roles
 
@@ -139,4 +146,6 @@ console.log(
     .can('post')
     .to('/users/articles')
 ); // false
+
+clearRoles(); //to clear the fake saved test rules from the server   
 

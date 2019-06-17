@@ -22,13 +22,13 @@ const createRole=(roleName)=> {
   //create roles list and initiate it with an empty list
   var roles = [];
   try {
-    roles = JSON.parse(fs.readFileSync('file.json', 'utf-8'));
+    roles = JSON.parse(fs.readFileSync('roles.json', 'utf-8'));
     roles.push({
       name: roleName,
       can: {},
     });
 
-    fs.writeFileSync('file.json', JSON.stringify(roles));
+    fs.writeFileSync('roles.json', JSON.stringify(roles));
 
     return true;
   } catch (err) {
@@ -47,7 +47,7 @@ const createRole=(roleName)=> {
 const loadRoles = () => {
   var roles = [];
   try{
-  roles = JSON.parse(fs.readFileSync('file.json', 'utf-8'));
+  roles = JSON.parse(fs.readFileSync('roles.json', 'utf-8'));
   }
   catch(err){
     console.log(err)
@@ -56,10 +56,22 @@ const loadRoles = () => {
 };
 
 const saveRoles =(roles)=>{
-  fs.writeFileSync('file.json', JSON.stringify(roles));
+  fs.writeFileSync('roles.json', JSON.stringify(roles));
 
 }
 
 
+const clearRoles=()=>{
+  try{
+    fs.unlinkSync('roles.json')
+  }
+  catch(err){
+    console.log(err)
+    throw new Error('An error happened while clearing roles ')
+  }
+  return true
+}
 
-module.exports = {createRole,loadRoles,saveRoles};
+
+
+module.exports = {createRole,loadRoles,saveRoles,clearRoles};
