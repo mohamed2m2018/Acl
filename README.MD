@@ -54,7 +54,7 @@ check.if('admin').can('post').to('/users'); //true
 
 ```
 
-When checking checking using the when function you don't need to send the params, you only need to dend the other
+When checking using the when function you don't need to send the params, you only need to send the other
 arguments that you have passed to when function while setting the permissions for that path   
 
 ```
