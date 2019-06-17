@@ -1,6 +1,65 @@
-//Note: the roles will be saved automatically in the server file system in order to be persistent 
+# Access Control List Module
 
-//Testing example
+ACL (Access Control List) specifies which group of users are granted access to objects,
+as well as what operations are allowed on given objects.
+
+### Installing
+
+Just download the package from your terminal
+```
+npm i access-control-list-module
+
+```
+
+###To Create New Role:
+A user role can be defined by calling a createRole method on the module
+
+```
+createRole('admin');
+
+```
+
+###To Set Permissions:
+Permissions should be defined using functions a and an, like so:
+
+```
+an('admin').can('post').to('/users');
+
+```
+
+```
+an('admin').can('get').from('/users');
+
+```
+
+You can also set conditional permissions based on parameters in the path you set permission for using the when function:
+
+```
+a('user').can('post').to('/users/:userId/articles').when((params, user) =>
+user.id === params.userId);
+
+```
+The when function always receives a an object params as a first parameter. The params object
+holds values for defined URL parameters.
+
+###To check Permissions:
+
+```
+check.if('admin').can('post').to('/users'); //true
+
+```
+
+When checking checking using the when function you don't need to send the params, you only need to dend the other
+arguments that you have passed to when function while setting the permissions for that path   
+
+```
+check.if('user').can('post').to('/users/10/articles').when({ id: 10 });
+
+```
+
+## Getting Started
+
+Just try this example
 
 
 //require module
